@@ -518,11 +518,11 @@ expression_statement
 	;
 
 selection_statement
-	: IF '(' expression ')' statement {
-		assert(!"Unimplemented");
+	: IF '(' expression ')' '{' statement '}' {
+		$$ = new IfStatement($3, $6);
 	}
-	| IF '(' expression ')' statement ELSE statement {
-		assert(!"Unimplemented");
+	| IF '(' expression ')' '{' statement '}' ELSE '{' statement '}' {
+		$$ = new IfElseStatement($3, $6, $10);
 	}
 	| SWITCH '(' expression ')' statement {
 		assert(!"Unimplemented");

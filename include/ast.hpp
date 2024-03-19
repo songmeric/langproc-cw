@@ -18,6 +18,8 @@
 #include "ast_compound_stmt.hpp"
 #include "ast_variable_ref.hpp"
 
+#include "ast_if_statement.hpp"
+
 extern Node *ParseAST(std::string file_name);
 
 #endif
