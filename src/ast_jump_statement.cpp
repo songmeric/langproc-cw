@@ -6,6 +6,12 @@ void ReturnStatement::EmitRISC(std::ostream &stream, Context &context) const
     {
         expression_->EmitRISC(stream, context);
     }
+
+
+    stream << "mv sp,s0\n";
+    stream << "lw s0,(sp)\n";
+    stream << "addi sp,sp,4\n";
+
     stream << "ret" << std::endl;
 }
 

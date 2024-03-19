@@ -34,6 +34,40 @@
                     "ignoreFailures": true
                 }
             ]
+        },
+        {
+            "name": "Testcase",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/c_compiler",
+            "args": [
+                "-S",
+                "compiler_tests/local_var/constant_initialiser",
+                "-o",
+                "bin/debug.s",
+            ],
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "ASAN_OPTIONS",
+                    "value": "exitcode=0,detect_leaks=0"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "preLaunchTask": "Run make",
+            "setupCommands": [
+                {
+                    "description": "Enable GDB pretty-printing",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Show Intel style disassembly in GDB",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
         }
     ]
 }

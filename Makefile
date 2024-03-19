@@ -2,6 +2,8 @@
 
 CXXFLAGS += -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include
 
+CXXFLAGS += -DYYDEBUG=1
+
 SOURCES := $(wildcard src/*.cpp)
 DEPENDENCIES := $(patsubst src/%.cpp,build/%.d,$(SOURCES))
 

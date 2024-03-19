@@ -2,6 +2,7 @@
 
 void IntConstant::EmitRISC(std::ostream &stream, Context &context) const
 {
+    stream << "# Load int constant\n";
     stream << "li a0, " << value_ << std::endl;
 }
 
