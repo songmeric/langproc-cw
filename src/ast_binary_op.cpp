@@ -4,6 +4,8 @@
 #include "ast_binary_op.hpp"
 #include <unistd.h>
 
+#include <cstring>
+
 
 void BinaryOp::EmitRISC(std::ostream &stream, Context &context) const
 {
@@ -14,10 +16,20 @@ void BinaryOp::EmitRISC(std::ostream &stream, Context &context) const
         case OP_MUL: insn = "mul"; break;
         case OP_DIV: insn = "div"; break;
         case OP_BITAND: insn = "and"; break;
-        case OP_BITOR: insn = "orb"; break;
+        case OP_BITOR: insn = "or"; break;  // changed from orb to or
         case OP_BITXOR: insn = "xor"; break;
         case OP_LEFT: insn = "shl"; break;
         case OP_RIGHT: insn = "sra"; break;
+
+        case OP_CMPEQ: insn = "beq"; break;     ////
+        case OP_CMPNE: insn = "bne"; break;
+        case OP_CMPLT: insn = "blt"; break;
+        case OP_CMPGT: insn = "bgt"; break;
+        case OP_CMPGE: insn = "bge"; break;
+        case OP_CMPLE: insn = "ble"; break;
+        case OP_LOGOR: insn = "logor"; break;
+        case OP_LOGAND: insn = "logand"; break; ////
+
         default: assert(!"FIXME: Unhandled operator");
     }
 
@@ -33,7 +45,47 @@ void BinaryOp::EmitRISC(std::ostream &stream, Context &context) const
     stream << "addi sp,sp,4\n";
 
     stream << "# Executing operation for " << insn << "\n";
-    stream << insn << " a0,a1,a0\n";
+
+    if ((strcmp(insn, "beq") == 0)||(strcmp(insn, "bne") == 0)||        ////
+        (strcmp(insn, "blt") == 0)||(strcmp(insn, "bgt") == 0)||
+        (strcmp(insn, "bge") == 0)||(strcmp(insn, "ble") == 0)){
+        std::string True = context.NewLabel();
+        std::string False = context.NewLabel();
+
+        stream << insn << " a1,a0" << True << "\n";
+        stream << "li a0,0\n";
+        stream << "j " << False << "\n";
+        stream << True <<":\n";
+        stream << "li a0,1\n";
+        stream << False <<":\n";
+    }
+    else if(strcmp(insn, "logor") == 0){
+        std::string True = context.NewLabel();
+        std::string False = context.NewLabel();
+
+        stream << "or a0,a1,a0\n";
+        stream << "bnez a0," << True << "\n";
+        stream << "li a0,0\n";
+        stream << "j " << False << "\n";
+        stream << True << ":\n";
+        stream << "li a0,1\n";
+        stream << False << ":\n";
+    }
+    else if(strcmp(insn, "logand") == 0){
+        std::string True = context.NewLabel();
+        std::string False = context.NewLabel();
+
+        stream << "and a0,a1,a0\n";
+        stream << "bnez a0," << True << "\n";
+        stream << "li a0,0\n";
+        stream << "j " << False << "\n";
+        stream << True << ":\n";
+        stream << "li a0,1\n";
+        stream << False << ":\n";
+    }
+    else{   ////
+        stream << insn << " a0,a1,a0\n";
+    }
 }
 
 void BinaryOp::Print(std::ostream &stream) const
@@ -50,6 +102,16 @@ void BinaryOp::Print(std::ostream &stream) const
         case OP_BITXOR: optxt = "^"; break;
         case OP_LEFT: optxt = "<<"; break;
         case OP_RIGHT: optxt = ">>"; break;
+
+        case OP_CMPEQ: optxt = "=="; break;  ////
+        case OP_CMPNE: optxt = "!="; break;
+        case OP_CMPLT: optxt = "<"; break;
+        case OP_CMPGT: optxt = ">"; break;
+        case OP_CMPGE: optxt = ">="; break;
+        case OP_CMPLE: optxt = "<="; break;
+        case OP_LOGOR: optxt = "||"; break;
+        case OP_LOGAND: optxt = "&&"; break; ////
+
         default: assert(!"FIXME: Unhandled operator");
     }
     stream << optxt << "\n";
