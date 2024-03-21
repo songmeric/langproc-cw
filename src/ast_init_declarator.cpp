@@ -11,7 +11,7 @@ void InitDeclarator::EmitRISC(std::ostream &stream, Context &context) const
 
     value_->EmitRISC(stream, context);
     stream << "addi sp,sp,-4\n";
-    stream << "sw a0," << (long)v->offset << "(s0)\n";
+    stream << "sw a0," << v->offset << "(s0)\n";
 }
 
 void InitDeclarator::Print(std::ostream &stream) const

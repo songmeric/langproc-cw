@@ -1,0 +1,7 @@
+int f() {
+int c = 8;
+return a+
+b*
+c*
+5;
+}

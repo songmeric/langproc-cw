@@ -5,15 +5,14 @@ void FunctionDefinition::EmitRISC(std::ostream &stream, Context &context) const
 {
     // Emit assembler directives.
 
-
     std::stringstream ss;
     declarator_->Print(ss);
     std::string name = ss.str();
-    ss.clear();
+    ss.str("");
 
     declaration_specifiers_->Print(ss);
     std::string type = ss.str();
-    ss.clear();
+    ss.str("");
 
     // TODO: these are just examples ones, make sure you understand
     // the concept of directives and correct them.
@@ -26,14 +25,36 @@ void FunctionDefinition::EmitRISC(std::ostream &stream, Context &context) const
 
     declarator_->EmitRISC(stream, context);
 
-    stream << "# Allocate space to save s0\n";
-    stream << "addi sp,sp,-4\n";
-
+    stream << "# Allocate space to save ra and caller's s0\n";
+    stream << "addi sp,sp,-8\n";
+    stream << "# Save caller's ra\n";
+    stream << "sw ra,4(sp)\n";
     stream << "# Save caller's s0\n";
     stream << "sw s0,0(sp)\n";
 
     stream << "# Copy stack pointer into frame pointer\n";
     stream << "mv s0,sp\n";
+
+    // Create the parameter variables
+    Node *paramList = context.functionParameters;
+    if (paramList)
+        paramList->EmitRISC(stream, context);
+
+    int parameter_nr = 0;
+
+    // Declare a variable for each parameter
+    for (auto &var : context.parameterDecls)
+    {
+        Variable *parameterVariable = context.DeclareVariable(
+            var.type, var.name);
+
+        // Generate code to copy the parameter register
+        // into the variable (in the stack frame)
+        stream << "# Store parameter " << parameter_nr <<
+            " ( " << parameterVariable->name << ")\n";
+        stream << "sw a" << parameter_nr++ << "," <<
+            parameterVariable->offset << "(s0)\n";
+    }
 
     if (compound_statement_ != nullptr)
     {
@@ -42,6 +63,7 @@ void FunctionDefinition::EmitRISC(std::ostream &stream, Context &context) const
 
     context.ExitScope();
     context.currentFunction = -1;
+    context.parameterDecls.clear();
 }
 
 void FunctionDefinition::Print(std::ostream &stream) const

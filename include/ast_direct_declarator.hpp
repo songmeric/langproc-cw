@@ -7,9 +7,11 @@ class DirectDeclarator : public Node
 {
 private:
     Node *identifier_;
+    Node *parameters_;
 
 public:
-    DirectDeclarator(Node *identifier) : identifier_(identifier){};
+    DirectDeclarator(Node *identifier, Node *parameters)
+    : identifier_(identifier), parameters_(parameters) {}
     ~DirectDeclarator()
     {
         delete identifier_;

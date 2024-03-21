@@ -34,11 +34,12 @@
 %type <node> equality_expression and_expression exclusive_or_expression inclusive_or_expression logical_and_expression logical_or_expression
 %type <node> conditional_expression assignment_expression expression constant_expression declaration declaration_specifiers
 %type <node> init_declarator type_specifier struct_specifier struct_declaration
-%type <node> struct_declarator enum_specifier enumerator_list enumerator declarator direct_declarator pointer parameter_list parameter_declaration
+%type <node> struct_declarator enum_specifier enumerator_list enumerator declarator direct_declarator pointer parameter_declaration
 %type <node> identifier_list type_name abstract_declarator direct_abstract_declarator initializer initializer_list statement labeled_statement
 %type <node> compound_statement expression_statement selection_statement iteration_statement jump_statement
 
-%type <nodes> statement_list struct_declaration_list specifier_qualifier_list struct_declarator_list  declaration_list init_declarator_list
+%type <nodes> statement_list struct_declaration_list specifier_qualifier_list
+%type <nodes> struct_declarator_list  declaration_list init_declarator_list parameter_list
 
 %type <string> unary_operator assignment_operator storage_class_specifier
 
@@ -95,16 +96,22 @@ primary_expression
 postfix_expression
 	: primary_expression
 	| postfix_expression '[' expression ']'
-	| postfix_expression '(' ')'
-	| postfix_expression '(' argument_expression_list ')'
-	| postfix_expression '.' IDENTIFIER
+	| postfix_expression '(' ')' {
+		$$ = new BinaryOp($1, OP_CALL, nullptr);
+	}
+	| postfix_expression '(' argument_expression_list ')' {
+		$$ = new BinaryOp($1, OP_CALL, $3);
+	}
+	| postfix_expression '.' IDENTIFIER {
+		$$ = new BinaryOp($1, OP_MEMBER, new Identifier(*$3));
+	}
 	| postfix_expression PTR_OP IDENTIFIER
-	| postfix_expression INC_OP
-	| postfix_expression DEC_OP
+	| postfix_expression INC_OP // { $$ = new PostfixOp($1, OP_INC); }
+	| postfix_expression DEC_OP // { $$ = new PostfixOp($1, OP_DEC); }
 	;
 
 argument_expression_list
-	: assignment_expression
+	: assignment_expression { }
 	| argument_expression_list ',' assignment_expression
 	;
 
@@ -133,60 +140,113 @@ cast_expression
 
 multiplicative_expression
 	: cast_expression
-	| multiplicative_expression '*' cast_expression
-	| multiplicative_expression '/' cast_expression
-	| multiplicative_expression '%' cast_expression
+	| multiplicative_expression '*' cast_expression {
+		$$ = new BinaryOp($1, OP_MUL, $3);
+	}
+	;
+	| multiplicative_expression '/' cast_expression {
+		$$ = new BinaryOp($1, OP_DIV, $3);
+	}
+	;
+	| multiplicative_expression '%' cast_expression {
+		$$ = new BinaryOp($1, OP_MOD, $3);
+	}
+	;
 	;
 
 additive_expression
 	: multiplicative_expression
-	| additive_expression '+' multiplicative_expression
-	| additive_expression '-' multiplicative_expression
+	| additive_expression '+' multiplicative_expression {
+		$$ = new BinaryOp($1, OP_ADD, $3);
+	}
+	;
+	| additive_expression '-' multiplicative_expression {
+		$$ = new BinaryOp($1, OP_SUB, $3);
+	}
+	;
 	;
 
 shift_expression
 	: additive_expression
-	| shift_expression LEFT_OP additive_expression
-	| shift_expression RIGHT_OP additive_expression
+	| shift_expression LEFT_OP additive_expression {
+		$$ = new BinaryOp($1, OP_LEFT, $3);
+	}
+	;
+	| shift_expression RIGHT_OP additive_expression {
+		$$ = new BinaryOp($1, OP_RIGHT, $3);
+	}
+	;
 	;
 
 relational_expression
 	: shift_expression
-	| relational_expression '<' shift_expression
-	| relational_expression '>' shift_expression
-	| relational_expression LE_OP shift_expression
-	| relational_expression GE_OP shift_expression
+	| relational_expression '<' shift_expression {
+		$$ = new BinaryOp($1, OP_CMPLT, $3);
+	}
+	;
+	| relational_expression '>' shift_expression {
+		$$ = new BinaryOp($1, OP_CMPGT, $3);
+	}
+	;
+	| relational_expression LE_OP shift_expression {
+		$$ = new BinaryOp($1, OP_CMPLE, $3);
+	}
+	;
+	| relational_expression GE_OP shift_expression {
+		$$ = new BinaryOp($1, OP_CMPGE, $3);
+	}
+	;
 	;
 
 equality_expression
 	: relational_expression
-	| equality_expression EQ_OP relational_expression
-	| equality_expression NE_OP relational_expression
+	| equality_expression EQ_OP relational_expression {
+		$$ = new BinaryOp($1, OP_CMPEQ, $3);
+	}
+	;
+	| equality_expression NE_OP relational_expression {
+		$$ = new BinaryOp($1, OP_CMPNE, $3);
+	}
+	;
 	;
 
 and_expression
 	: equality_expression
-	| and_expression '&' equality_expression
+	| and_expression '&' equality_expression {
+		$$ = new BinaryOp($1, OP_BITAND, $3);
+	}
+	;
 	;
 
 exclusive_or_expression
 	: and_expression
-	| exclusive_or_expression '^' and_expression
+	| exclusive_or_expression '^' and_expression {
+		$$ = new BinaryOp($1, OP_BITXOR, $3);
+	}
+	;
 	;
 
 inclusive_or_expression
 	: exclusive_or_expression
-	| inclusive_or_expression '|' exclusive_or_expression
+	| inclusive_or_expression '|' exclusive_or_expression {
+		$$ = new BinaryOp($1, OP_BITOR, $3);
+	}
+	;
 	;
 
 logical_and_expression
 	: inclusive_or_expression
-	| logical_and_expression AND_OP inclusive_or_expression
+	| logical_and_expression AND_OP inclusive_or_expression {
+		$$ = new BinaryOp($1, OP_LOGAND, $3);
+	}
+	;
 	;
 
 logical_or_expression
 	: logical_and_expression
-	| logical_or_expression OR_OP logical_and_expression
+	| logical_or_expression OR_OP logical_and_expression {
+		$$ = new BinaryOp($1, OP_LOGOR, $3);
+	}
 	;
 
 conditional_expression
@@ -215,7 +275,9 @@ assignment_operator
 
 expression
 	: assignment_expression
-	| expression ',' assignment_expression
+	| expression ',' assignment_expression {
+		$$ = new BinaryOp($1, OP_COMMA, $3);
+	}
 	;
 
 constant_expression
@@ -353,6 +415,7 @@ declarator
 	| direct_declarator { $$ = $1; }
 	;
 
+
 direct_declarator
 	: IDENTIFIER {
 		$$ = new Identifier(*$1);
@@ -366,13 +429,13 @@ direct_declarator
 		assert(!"Unimplemented");
 	}
 	| direct_declarator '(' parameter_list ')' {
-		assert(!"Unimplemented");
+		$$ = new DirectDeclarator($1, $3);
 	}
 	| direct_declarator '(' identifier_list ')' {
 		assert(!"Unimplemented");
 	}
 	| direct_declarator '(' ')' {
-		$$ = new DirectDeclarator($1);
+		$$ = new DirectDeclarator($1, nullptr);
 	}
 	;
 
@@ -384,15 +447,18 @@ pointer
 	;
 
 parameter_list
-	: parameter_declaration
+	: parameter_declaration {
+		$$ = new NodeList($1);
+	}
 	| parameter_list ',' parameter_declaration {
-		assert(!"Unimplemented");
+		$1->PushBack($3);
+		$$ = $1;
 	}
 	;
 
 parameter_declaration
 	: declaration_specifiers declarator {
-		assert(!"Unimplemented");
+		$$ = new ParameterDecl($1, $2);
 	}
 	| declaration_specifiers abstract_declarator {
 		assert(!"Unimplemented");
@@ -518,11 +584,11 @@ expression_statement
 	;
 
 selection_statement
-	: IF '(' expression ')' '{' statement '}' {
-		$$ = new IfStatement($3, $6);
+	: IF '(' expression ')' statement {
+		$$ = new IfStatement($3, $5);
 	}
-	| IF '(' expression ')' '{' statement '}' ELSE '{' statement '}' {
-		$$ = new IfElseStatement($3, $6, $10);
+	| IF '(' expression ')' statement ELSE statement {
+		$$ = new IfElseStatement($3, $5, $7);
 	}
 	| SWITCH '(' expression ')' statement {
 		assert(!"Unimplemented");

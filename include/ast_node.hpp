@@ -35,9 +35,72 @@ public:
         }
     }
 
+    Node *Child(size_t i) const
+    {
+        return nodes_.at(i);
+    }
+
+    Node *operator[](size_t i) const
+    {
+        return Child(i);
+    }
+
+    size_t size() const
+    {
+        return nodes_.size();
+    }
+
     void PushBack(Node *item);
     virtual void EmitRISC(std::ostream &stream, Context &context) const override;
     virtual void Print(std::ostream &stream) const override;
+};
+
+
+enum Operator {
+    // Basics
+    OP_ADD,
+    OP_SUB,
+    OP_MUL,
+    OP_DIV,
+    OP_MOD,
+
+    // Function call
+    OP_CALL,
+
+    // Indirect (->)
+    OP_INDIRECT,
+    OP_MEMBER,
+
+    // Shifts
+    OP_LEFT,
+    OP_RIGHT,
+
+    // Comparisons
+    OP_CMPLT,
+    OP_CMPLE,
+    OP_CMPEQ,
+    OP_CMPGE,
+    OP_CMPGT,
+    OP_CMPNE,
+
+    // Comma
+    OP_COMMA,
+
+    // Bitwise
+    OP_BITAND,
+    OP_BITOR,
+    OP_BITXOR,
+
+    // Logical
+    OP_LOGAND,
+    OP_LOGOR,
+
+    // Unary
+    OP_INC,
+    OP_DEC,
+    OP_BITNOT,
+    OP_LOGNOT,
+    OP_ADDRESSOF
 };
 
 #endif

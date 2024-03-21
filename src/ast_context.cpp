@@ -17,6 +17,7 @@ Function *Context::DeclareFunction(
     std::string const &name)
 {
     currentFunction = functions.size();
+
     Function &fn = functions.emplace_back();
     fn.type = type;
     fn.name = name;
@@ -27,6 +28,11 @@ size_t Context::SizeOfType(std::string const& /*type*/) const
 {
     // Hardcoded to int only for now
     return 4;
+}
+
+std::string Context::NewLabel()
+{
+    return ".L" + std::to_string(++lastLabel);
 }
 
 Variable *Context::DeclareVariable(

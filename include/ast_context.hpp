@@ -5,12 +5,14 @@
 #include <vector>
 #include <map>
 
+struct Node;
+
 class Variable
 {
 public:
     std::string type;
     std::string name;
-    size_t offset = 0;
+    ssize_t offset = 0;
     bool inMemory = true;
 };
 
@@ -18,7 +20,7 @@ class Scope
 {
 public:
     std::vector<Variable> locals;
-    size_t localsSize;
+    size_t localsSize = 0;
 };
 
 class Function {
@@ -47,9 +49,20 @@ public:
 
     size_t SizeOfType(std::string const &) const;
 
+    std::string NewLabel();
+
     std::vector<Function> functions;
 
-    int currentFunction = -1;
+    int currentFunction{-1};
+
+    // Stashed by DirectDeclarator
+    // to hold on to them until the function definition
+    Node *functionParameters{};
+
+    ssize_t lastLabel{};
+
+    // Stashed by ParameterDecl in its emit
+    std::vector<Variable> parameterDecls;
 
     Variable *DeclareVariable(
         std::string const &type,

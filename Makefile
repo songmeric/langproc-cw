@@ -3,9 +3,11 @@
 CXXFLAGS += -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include
 
 CXXFLAGS += -DYYDEBUG=1
+CXXFLAGS += -I build
+CFLAGS += -I build
 
 SOURCES := $(wildcard src/*.cpp)
-DEPENDENCIES := $(patsubst src/%.cpp,build/%.d,$(SOURCES))
+DEPENDENCIES = $(patsubst src/%.cpp,build/%.d,$(SOURCES))
 
 OBJECTS := $(patsubst src/%.cpp,build/%.o,$(SOURCES))
 OBJECTS += build/parser.tab.o build/lexer.yy.o

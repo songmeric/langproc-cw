@@ -4,6 +4,10 @@ void DirectDeclarator::EmitRISC(std::ostream &stream, Context &context) const
 {
     identifier_->EmitRISC(stream, context);
     stream << ":" << std::endl;
+
+    if (parameters_)
+        parameters_->EmitRISC(stream, context);
+    context.functionParameters = parameters_;
 }
 
 void DirectDeclarator::Print(std::ostream &stream) const

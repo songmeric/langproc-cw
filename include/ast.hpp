@@ -19,6 +19,8 @@
 #include "ast_variable_ref.hpp"
 
 #include "ast_if_statement.hpp"
+#include "ast_binary_op.hpp"
+#include "ast_parameter_decl.hpp"
 
 extern Node *ParseAST(std::string file_name);
 

@@ -10,7 +10,8 @@ void ReturnStatement::EmitRISC(std::ostream &stream, Context &context) const
 
     stream << "mv sp,s0\n";
     stream << "lw s0,(sp)\n";
-    stream << "addi sp,sp,4\n";
+    stream << "lw ra,4(sp)\n";
+    stream << "addi sp,sp,8\n";
 
     stream << "ret" << std::endl;
 }
