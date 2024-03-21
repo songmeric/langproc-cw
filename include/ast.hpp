@@ -19,6 +19,9 @@
 #include "ast_variable_ref.hpp"
 
 #include "ast_if_statement.hpp"
+#include "ast_switch_statement.hpp"
+#include "ast_while_statement.hpp"
+#include "ast_for_statement.hpp"
 #include "ast_binary_op.hpp"
 #include "ast_parameter_decl.hpp"
 

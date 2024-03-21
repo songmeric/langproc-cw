@@ -546,10 +546,10 @@ labeled_statement
 		assert(!"Unimplemented");
 	}
 	| CASE constant_expression ':' statement {
-		assert(!"Unimplemented");
+		$$ = new CaseStatement($2, $4);
 	}
 	| DEFAULT ':' statement {
-		assert(!"Unimplemented");
+		$$ = new DefaultStatement($3);
 	}
 	;
 
@@ -591,22 +591,22 @@ selection_statement
 		$$ = new IfElseStatement($3, $5, $7);
 	}
 	| SWITCH '(' expression ')' statement {
-		assert(!"Unimplemented");
+		$$ = new SwitchStatement($3, $5);
 	}
 	;
 
 iteration_statement
 	: WHILE '(' expression ')' statement {
-		assert(!"Unimplemented");
+		$$ = new WhileStatement($3, $5);
 	}
 	| DO statement WHILE '(' expression ')' ';' {
-		assert(!"Unimplemented");
+		$$ = new DoWhileStatement($2, $5);
 	}
 	| FOR '(' expression_statement expression_statement ')' statement {
-		assert(!"Unimplemented");
+		$$ = new ForStatement($3, $4, $6);
 	}
 	| FOR '(' expression_statement expression_statement expression ')' statement {
-		assert(!"Unimplemented");
+		$$ = new ExprForStatement($3, $4, $5, $7);
 	}
 	;
 

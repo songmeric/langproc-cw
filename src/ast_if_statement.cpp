@@ -17,9 +17,9 @@ void IfStatement::EmitRISC(std::ostream &stream, Context &context) const
 
 void IfStatement::Print(std::ostream &stream) const
 {
-    stream << "if ( ";
+    stream << "if(";
     expression_->Print(stream);
-    stream << " ) { " << std::endl;
+    stream << "){" << std::endl;
     statement_->Print(stream);
     stream << "}" << std::endl;
 }
@@ -47,12 +47,12 @@ void IfElseStatement::EmitRISC(std::ostream &stream, Context &context) const
 
 void IfElseStatement::Print(std::ostream &stream) const
 {
-    stream << "if ( ";
+    stream << "if(";
     expression_->Print(stream);
-    stream << " ) { " << std::endl;
+    stream << "){" << std::endl;
     statement_->Print(stream);
     stream << "}" << std::endl;
-    stream << "else {";
+    stream << "else{";
     elsestatement_->Print(stream);
     stream << "}" << std::endl;
 
