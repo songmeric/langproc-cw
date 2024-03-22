@@ -256,7 +256,39 @@ conditional_expression
 
 assignment_expression
 	: conditional_expression
-	| unary_expression assignment_operator assignment_expression
+	| unary_expression '=' assignment_expression {
+		$$ = new BinaryOp($1, OP_ASSIGN, $3);
+	}
+	| unary_expression MUL_ASSIGN assignment_expression {
+		$$ = new BinaryOp($1, OP_MULASSIGN, $3);
+	}
+	| unary_expression DIV_ASSIGN assignment_expression {
+		$$ = new BinaryOp($1, OP_DIVASSIGN, $3);
+	}
+	| unary_expression MOD_ASSIGN assignment_expression {
+		$$ = new BinaryOp($1, OP_MODASSIGN, $3);
+	}
+	| unary_expression ADD_ASSIGN assignment_expression {
+		$$ = new BinaryOp($1, OP_ADDASSIGN, $3);
+	}
+	| unary_expression SUB_ASSIGN assignment_expression {
+		$$ = new BinaryOp($1, OP_SUBASSIGN, $3);
+	}
+	| unary_expression LEFT_ASSIGN assignment_expression {
+		$$ = new BinaryOp($1, OP_LEFTASSIGN, $3);
+	}
+	| unary_expression RIGHT_ASSIGN assignment_expression {
+		$$ = new BinaryOp($1, OP_RIGHTASSIGN, $3);
+	}
+	| unary_expression AND_ASSIGN assignment_expression {
+		$$ = new BinaryOp($1, OP_ANDASSIGN, $3);
+	}
+	| unary_expression XOR_ASSIGN assignment_expression {
+		$$ = new BinaryOp($1, OP_XORASSIGN, $3);
+	}
+	| unary_expression OR_ASSIGN assignment_expression {
+		$$ = new BinaryOp($1, OP_ORASSIGN, $3);
+	}
 	;
 
 assignment_operator
@@ -307,7 +339,9 @@ init_declarator_list
 
 
 init_declarator
-	: declarator
+	: declarator {
+		$$ = new InitDeclarator($1, nullptr);
+	}
 	| declarator '=' initializer {
 		$$ = new InitDeclarator($1, $3);
 	}

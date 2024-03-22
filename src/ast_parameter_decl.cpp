@@ -5,10 +5,13 @@ void ParameterDecl::EmitRISC(std::ostream &stream, Context &context) const
 {
     std::ostringstream ss;
 
+    // Get the type
     declaration_specifiers_->Print(ss);
     std::string type = ss.str();
     ss.str("");
 
+
+    // Get the name
     declarator_->EmitRISC(ss, context);
     std::string name = ss.str();
     ss.str("");

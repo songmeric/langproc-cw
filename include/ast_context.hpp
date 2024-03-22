@@ -61,12 +61,18 @@ public:
 
     ssize_t lastLabel{};
 
+    // Self clearing flag that tells variable
+    // reference that is is a store, not load
+    bool variableStore{};
+
     // Stashed by ParameterDecl in its emit
     std::vector<Variable> parameterDecls;
 
     Variable *DeclareVariable(
         std::string const &type,
         std::string const &name);
+
+    void ReserveVariables(size_t more);
 
     std::string declarationListType;
 

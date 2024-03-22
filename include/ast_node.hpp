@@ -55,14 +55,20 @@ public:
     virtual void Print(std::ostream &stream) const override;
 };
 
-
 enum Operator {
+    OP_ASSIGN,
+
     // Basics
     OP_ADD,
+    OP_ADDASSIGN,
     OP_SUB,
+    OP_SUBASSIGN,
     OP_MUL,
+    OP_MULASSIGN,
     OP_DIV,
+    OP_DIVASSIGN,
     OP_MOD,
+    OP_MODASSIGN,
 
     // Function call
     OP_CALL,
@@ -73,7 +79,9 @@ enum Operator {
 
     // Shifts
     OP_LEFT,
+    OP_LEFTASSIGN,
     OP_RIGHT,
+    OP_RIGHTASSIGN,
 
     // Comparisons
     OP_CMPLT,
@@ -88,8 +96,11 @@ enum Operator {
 
     // Bitwise
     OP_BITAND,
+    OP_ANDASSIGN,
     OP_BITOR,
+    OP_ORASSIGN,
     OP_BITXOR,
+    OP_XORASSIGN,
 
     // Logical
     OP_LOGAND,
@@ -100,7 +111,9 @@ enum Operator {
     OP_DEC,
     OP_BITNOT,
     OP_LOGNOT,
-    OP_ADDRESSOF
+    OP_ADDRESSOF,
+
+
 };
 
 #endif

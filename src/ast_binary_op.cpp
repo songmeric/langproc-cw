@@ -9,8 +9,21 @@
 
 void BinaryOp::EmitRISC(std::ostream &stream, Context &context) const
 {
+    // Handle assignments in a way that reuses the
+    // code for non-assignment
+    bool assignment = IsAssignment();
+
+    Operator op = oper_;
+
+    if (assignment && oper_ != OP_ASSIGN) {
+        // The enum is set up so the X enum is equal
+        // to the integer value of X minus one
+        op = Operator((int)op - 1);
+    }
+
     char const *insn = nullptr;
-    switch (oper_) {
+    switch (op) {
+        case OP_ASSIGN: insn = "sw"; break;
         case OP_ADD: insn = "add"; break;
         case OP_SUB: insn = "sub"; break;
         case OP_MUL: insn = "mul"; break;
@@ -33,12 +46,32 @@ void BinaryOp::EmitRISC(std::ostream &stream, Context &context) const
         default: assert(!"FIXME: Unhandled operator");
     }
 
-    stream << "# Evaluating left side for " << insn << "\n";
-    lhs_->EmitRISC(stream, context);
+    // left hand side is expected to be in a1
+    // right hand side is expected to be in a0
+
+    if (assignment) {
+        if (op == OP_ASSIGN) {
+            // Evaluate value to be assigned
+            stream << "# Evaluating right side result for " << insn << "\n";
+            rhs_->EmitRISC(stream, context);
+
+            // Tell the VariableReference that it is a store
+            context.variableStore = true;
+            lhs_->EmitRISC(stream, context);
+            return;
+        }
+
+        // Load the variable as left hand side
+        lhs_->EmitRISC(stream, context);
+    } else {
+        stream << "# Evaluating left side for " << insn << "\n";
+        lhs_->EmitRISC(stream, context);
+    }
+
     stream << "# Pushing left side result for " << insn << "\n";
     stream << "addi sp,sp,-4\n";
     stream << "sw a0,0(sp)\n";
-    stream << "# Eva;iatomg side result for " << insn << "\n";
+    stream << "# Evaluating right side result for " << insn << "\n";
     rhs_->EmitRISC(stream, context);
     stream << "# Popping saved left side result for " << insn << "\n";
     stream << "lw a1,0(sp)\n";
@@ -52,7 +85,7 @@ void BinaryOp::EmitRISC(std::ostream &stream, Context &context) const
         std::string True = context.NewLabel();
         std::string False = context.NewLabel();
 
-        stream << insn << " a1,a0" << True << "\n";
+        stream << insn << " a1,a0," << True << "\n";
         stream << "li a0,0\n";
         stream << "j " << False << "\n";
         stream << True <<":\n";
@@ -86,13 +119,27 @@ void BinaryOp::EmitRISC(std::ostream &stream, Context &context) const
     else{   ////
         stream << insn << " a0,a1,a0\n";
     }
+
+    if (assignment) {
+        context.variableStore = true;
+        lhs_->EmitRISC(stream, context);
+    }
 }
 
 void BinaryOp::Print(std::ostream &stream) const
 {
+    bool assignment = IsAssignment();
+
+    Operator op = oper_;
+
+    if (assignment && op != OP_ASSIGN) {
+        op = Operator((int)op - 1);
+    }
+
     lhs_->Print(stream);
     char const *optxt = nullptr;
-    switch (oper_) {
+    switch (op) {
+        case OP_ASSIGN: optxt = ""; break;
         case OP_ADD: optxt = "+"; break;
         case OP_SUB: optxt = "-"; break;
         case OP_MUL: optxt = "*"; break;
@@ -114,6 +161,25 @@ void BinaryOp::Print(std::ostream &stream) const
 
         default: assert(!"FIXME: Unhandled operator");
     }
-    stream << optxt << "\n";
+    stream << optxt << (assignment ? "=" : "");
     rhs_->Print(stream);
+}
+
+bool BinaryOp::IsAssignment() const
+{
+    switch (oper_) {
+    case OP_ASSIGN:
+    case OP_MULASSIGN:
+    case OP_DIVASSIGN:
+    case OP_MODASSIGN:
+    case OP_ADDASSIGN:
+    case OP_SUBASSIGN:
+    case OP_LEFTASSIGN:
+    case OP_RIGHTASSIGN:
+    case OP_ANDASSIGN:
+    case OP_XORASSIGN:
+    case OP_ORASSIGN:
+        return true;
+    }
+    return false;
 }

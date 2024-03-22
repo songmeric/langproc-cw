@@ -61,6 +61,13 @@ Variable *Context::DeclareVariable(
     return &variable;
 }
 
+void Context::ReserveVariables(size_t more)
+{
+    Scope &innermost = scopes.back();
+    innermost.locals.reserve(
+        innermost.locals.size() + more);
+}
+
 Variable *Context::FindVariable(std::string const &name)
 {
     for (size_t i = scopes.size(); i > 0; --i)

@@ -42,12 +42,36 @@ void FunctionDefinition::EmitRISC(std::ostream &stream, Context &context) const
 
     int parameter_nr = 0;
 
+    std::vector<Variable*> parameterInstances;
+
+    // Expand the vector capacity so the instances won't move
+    context.ReserveVariables(context.parameterDecls.size());
+
     // Declare a variable for each parameter
     for (auto &var : context.parameterDecls)
     {
         Variable *parameterVariable = context.DeclareVariable(
             var.type, var.name);
 
+        parameterInstances.emplace_back(parameterVariable);
+    }
+
+    if (!parameterInstances.empty()) {
+        Variable *firstParameter = parameterInstances.front();
+        Variable *lastParameter = parameterInstances.back();
+        size_t end = lastParameter->offset +
+            context.SizeOfType(lastParameter->type);
+        size_t start = firstParameter->offset;
+        ssize_t alloc = end - start;
+
+        stream << "# Allocate space for the parameters\n";
+        stream << "addi sp,sp," << alloc << "\n";
+    }
+
+    for (auto &var : context.parameterDecls)
+    {
+        Variable *parameterVariable =
+            parameterInstances[parameter_nr];
         // Generate code to copy the parameter register
         // into the variable (in the stack frame)
         stream << "# Store parameter " << parameter_nr <<
