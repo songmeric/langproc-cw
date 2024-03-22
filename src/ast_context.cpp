@@ -82,3 +82,14 @@ Variable *Context::FindVariable(std::string const &name)
 
     return nullptr;
 }
+
+Function *Context::FindFunction(std::string const& name)
+{
+    for (auto &fn : functions)
+    {
+        if (fn.name == name)
+            return &fn;
+    }
+
+    return nullptr;
+}

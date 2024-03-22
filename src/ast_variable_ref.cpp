@@ -8,6 +8,17 @@ void VariableReference::EmitRISC(std::ostream &stream, Context &context) const
     std::string name = ss.str();
     Variable *v = context.FindVariable(name);
 
+    if (!v) {
+        // // Maybe it's a function
+        // Function *fn = context.FindFunction(name);
+        // if (fn) {
+        //     stream << "la a0," << fn->name << "\n";
+        //     return;
+        // }
+        stream << "la a0," << name << "\n";
+        return;
+    }
+
     if (!context.variableStore) {
         stream << "# Load from variable \"" << v->name << "\"\n";
         stream << "lw a0," << v->offset << "(s0)\n";

@@ -1,0 +1,790 @@
+make: Entering directory '/workspaces/langproc-cw'
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_binary_op.cpp -o build/ast_binary_op.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_compound_stmt.cpp -o build/ast_compound_stmt.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_constant.cpp -o build/ast_constant.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_context.cpp -o build/ast_context.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_declaration_list.cpp -o build/ast_declaration_list.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_direct_declarator.cpp -o build/ast_direct_declarator.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_for_statement.cpp -o build/ast_for_statement.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_function_definition.cpp -o build/ast_function_definition.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_identifier.cpp -o build/ast_identifier.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_if_statement.cpp -o build/ast_if_statement.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_init_declarator.cpp -o build/ast_init_declarator.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_jump_statement.cpp -o build/ast_jump_statement.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_node.cpp -o build/ast_node.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_parameter_decl.cpp -o build/ast_parameter_decl.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_switch_statement.cpp -o build/ast_switch_statement.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_type_specifier.cpp -o build/ast_type_specifier.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_variable_ref.cpp -o build/ast_variable_ref.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/ast_while_statement.cpp -o build/ast_while_statement.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/cli.cpp -o build/cli.o
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -MMD -MP -c src/compiler.cpp -o build/compiler.o
+bison -v -d src/parser.y -o build/parser.tab.cpp
+src/parser.y:91.7-20: warning: type clash on default action: <node> != <number_float> [-Wother]
+   91 |     | FLOAT_CONSTANT
+      |       ^~~~~~~~~~~~~~
+src/parser.y:92.11-24: warning: type clash on default action: <node> != <number_int> [-Wother]
+   92 | 	| STRING_LITERAL
+      |           ^~~~~~~~~~~~~~
+src/parser.y:120.11-33: warning: type clash on default action: <node> != <> [-Wother]
+  120 | 	| INC_OP unary_expression
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+src/parser.y:121.11-33: warning: type clash on default action: <node> != <> [-Wother]
+  121 | 	| DEC_OP unary_expression
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+src/parser.y:122.11-40: warning: type clash on default action: <node> != <string> [-Wother]
+  122 | 	| unary_operator cast_expression
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/parser.y:123.11-33: warning: type clash on default action: <node> != <> [-Wother]
+  123 | 	| SIZEOF unary_expression
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+src/parser.y:124.11-34: warning: type clash on default action: <node> != <> [-Wother]
+  124 | 	| SIZEOF '(' type_name ')'
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+src/parser.y:128.11-13: warning: type clash on default action: <string> != <> [-Wother]
+  128 | 	: '&'
+      |           ^~~
+src/parser.y:129.11-13: warning: type clash on default action: <string> != <> [-Wother]
+  129 | 	| '*'
+      |           ^~~
+src/parser.y:130.11-13: warning: type clash on default action: <string> != <> [-Wother]
+  130 | 	| '+'
+      |           ^~~
+src/parser.y:131.11-13: warning: type clash on default action: <string> != <> [-Wother]
+  131 | 	| '-'
+      |           ^~~
+src/parser.y:132.11-13: warning: type clash on default action: <string> != <> [-Wother]
+  132 | 	| '~'
+      |           ^~~
+src/parser.y:133.11-13: warning: type clash on default action: <string> != <> [-Wother]
+  133 | 	| '!'
+      |           ^~~
+src/parser.y:138.11-43: warning: type clash on default action: <node> != <> [-Wother]
+  138 | 	| '(' type_name ')' cast_expression
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/parser.y:263.11-13: warning: type clash on default action: <string> != <> [-Wother]
+  263 | 	: '='
+      |           ^~~
+src/parser.y:264.11-20: warning: type clash on default action: <string> != <> [-Wother]
+  264 | 	| MUL_ASSIGN
+      |           ^~~~~~~~~~
+src/parser.y:265.11-20: warning: type clash on default action: <string> != <> [-Wother]
+  265 | 	| DIV_ASSIGN
+      |           ^~~~~~~~~~
+src/parser.y:266.11-20: warning: type clash on default action: <string> != <> [-Wother]
+  266 | 	| MOD_ASSIGN
+      |           ^~~~~~~~~~
+src/parser.y:267.11-20: warning: type clash on default action: <string> != <> [-Wother]
+  267 | 	| ADD_ASSIGN
+      |           ^~~~~~~~~~
+src/parser.y:268.11-20: warning: type clash on default action: <string> != <> [-Wother]
+  268 | 	| SUB_ASSIGN
+      |           ^~~~~~~~~~
+src/parser.y:269.11-21: warning: type clash on default action: <string> != <> [-Wother]
+  269 | 	| LEFT_ASSIGN
+      |           ^~~~~~~~~~~
+src/parser.y:270.11-22: warning: type clash on default action: <string> != <> [-Wother]
+  270 | 	| RIGHT_ASSIGN
+      |           ^~~~~~~~~~~~
+src/parser.y:271.11-20: warning: type clash on default action: <string> != <> [-Wother]
+  271 | 	| AND_ASSIGN
+      |           ^~~~~~~~~~
+src/parser.y:272.11-20: warning: type clash on default action: <string> != <> [-Wother]
+  272 | 	| XOR_ASSIGN
+      |           ^~~~~~~~~~
+src/parser.y:273.11-19: warning: type clash on default action: <string> != <> [-Wother]
+  273 | 	| OR_ASSIGN
+      |           ^~~~~~~~~
+src/parser.y:294.11-33: warning: type clash on default action: <node> != <string> [-Wother]
+  294 | 	: storage_class_specifier
+      |           ^~~~~~~~~~~~~~~~~~~~~~~
+src/parser.y:295.11-56: warning: type clash on default action: <node> != <string> [-Wother]
+  295 | 	| storage_class_specifier declaration_specifiers
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/parser.y:316.11-17: warning: type clash on default action: <string> != <> [-Wother]
+  316 | 	: TYPEDEF
+      |           ^~~~~~~
+src/parser.y:317.11-16: warning: type clash on default action: <string> != <> [-Wother]
+  317 | 	| EXTERN
+      |           ^~~~~~
+src/parser.y:318.11-16: warning: type clash on default action: <string> != <> [-Wother]
+  318 | 	| STATIC
+      |           ^~~~~~
+src/parser.y:319.11-14: warning: type clash on default action: <string> != <> [-Wother]
+  319 | 	| AUTO
+      |           ^~~~
+src/parser.y:320.11-18: warning: type clash on default action: <string> != <> [-Wother]
+  320 | 	| REGISTER
+      |           ^~~~~~~~
+src/parser.y:324.11-14: warning: type clash on default action: <node> != <> [-Wother]
+  324 | 	: VOID
+      |           ^~~~
+src/parser.y:325.11-14: warning: type clash on default action: <node> != <> [-Wother]
+  325 | 	| CHAR
+      |           ^~~~
+src/parser.y:326.11-15: warning: type clash on default action: <node> != <> [-Wother]
+  326 | 	| SHORT
+      |           ^~~~~
+src/parser.y:330.11-14: warning: type clash on default action: <node> != <> [-Wother]
+  330 | 	| LONG
+      |           ^~~~
+src/parser.y:331.11-15: warning: type clash on default action: <node> != <> [-Wother]
+  331 | 	| FLOAT
+      |           ^~~~~
+src/parser.y:332.11-16: warning: type clash on default action: <node> != <> [-Wother]
+  332 | 	| DOUBLE
+      |           ^~~~~~
+src/parser.y:333.11-16: warning: type clash on default action: <node> != <> [-Wother]
+  333 | 	| SIGNED
+      |           ^~~~~~
+src/parser.y:334.11-18: warning: type clash on default action: <node> != <> [-Wother]
+  334 | 	| UNSIGNED
+      |           ^~~~~~~~
+src/parser.y:337.11-19: warning: type clash on default action: <node> != <> [-Wother]
+  337 | 	| TYPE_NAME
+      |           ^~~~~~~~~
+src/parser.y:341.11-59: warning: type clash on default action: <node> != <> [-Wother]
+  341 | 	: STRUCT IDENTIFIER '{' struct_declaration_list '}'
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/parser.y:342.11-48: warning: type clash on default action: <node> != <> [-Wother]
+  342 | 	| STRUCT '{' struct_declaration_list '}'
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/parser.y:343.11-27: warning: type clash on default action: <node> != <> [-Wother]
+  343 | 	| STRUCT IDENTIFIER
+      |           ^~~~~~~~~~~~~~~~~
+src/parser.y:405.11-20: warning: type clash on default action: <node> != <string> [-Wother]
+  405 | 	: IDENTIFIER
+      |           ^~~~~~~~~~
+src/parser.y:443.11-13: warning: type clash on default action: <node> != <> [-Wother]
+  443 | 	: '*'
+      |           ^~~
+src/parser.y:480.11-34: warning: type clash on default action: <node> != <nodes> [-Wother]
+  480 | 	: specifier_qualifier_list
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+src/parser.y:582.11-13: warning: type clash on default action: <node> != <> [-Wother]
+  582 | 	: ';'
+      |           ^~~
+src/parser.y:614.11-29: warning: type clash on default action: <node> != <> [-Wother]
+  614 | 	: GOTO IDENTIFIER ';'
+      |           ^~~~~~~~~~~~~~~~~~~
+src/parser.y:615.11-22: warning: type clash on default action: <node> != <> [-Wother]
+  615 | 	| CONTINUE ';'
+      |           ^~~~~~~~~~~~
+src/parser.y:616.11-19: warning: type clash on default action: <node> != <> [-Wother]
+  616 | 	| BREAK ';'
+      |           ^~~~~~~~~
+src/parser.y: warning: 1 shift/reduce conflict [-Wconflicts-sr]
+src/parser.y: note: rerun with option '-Wcounterexamples' to generate conflict counterexamples
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build   -c -o build/parser.tab.o build/parser.tab.cpp
+flex -o build/lexer.yy.cpp src/lexer.flex
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build   -c -o build/lexer.yy.o build/lexer.yy.cpp
+g++ -std=c++20 -W -Wall -g -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -fsanitize=address -static-libasan -O0 -rdynamic --coverage -I include -DYYDEBUG=1 -I build -o bin/c_compiler build/ast_binary_op.o build/ast_compound_stmt.o build/ast_constant.o build/ast_context.o build/ast_declaration_list.o build/ast_direct_declarator.o build/ast_for_statement.o build/ast_function_definition.o build/ast_identifier.o build/ast_if_statement.o build/ast_init_declarator.o build/ast_jump_statement.o build/ast_node.o build/ast_parameter_decl.o build/ast_switch_statement.o build/ast_type_specifier.o build/ast_variable_ref.o build/ast_while_statement.o build/cli.o build/compiler.o build/parser.tab.o build/lexer.yy.o
+make: Leaving directory '/workspaces/langproc-cw'
+Cleaning project...
+Running make...
+compiler_tests/_example/example.c
+	> Pass
+
+compiler_tests/array/declare_global.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/array/declare_global/declare_global.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/array/declare_global/declare_global.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/array/declare_global/declare_global.s 
+	 /workspaces/langproc-cw/bin/output/array/declare_global/declare_global.s.printed
+
+compiler_tests/array/declare_local.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/array/declare_local/declare_local.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/array/declare_local/declare_local.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/array/declare_local/declare_local.s 
+	 /workspaces/langproc-cw/bin/output/array/declare_local/declare_local.s.printed
+
+compiler_tests/array/index_constant.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/array/index_constant/index_constant.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/array/index_constant/index_constant.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/array/index_constant/index_constant.s 
+	 /workspaces/langproc-cw/bin/output/array/index_constant/index_constant.s.printed
+
+compiler_tests/array/index_expression.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/array/index_expression/index_expression.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/array/index_expression/index_expression.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/array/index_expression/index_expression.s 
+	 /workspaces/langproc-cw/bin/output/array/index_expression/index_expression.s.printed
+
+compiler_tests/array/index_variable.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/array/index_variable/index_variable.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/array/index_variable/index_variable.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/array/index_variable/index_variable.s 
+	 /workspaces/langproc-cw/bin/output/array/index_variable/index_variable.s.printed
+
+compiler_tests/control_flow/for_multiple.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_multiple/for_multiple.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_multiple/for_multiple.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_multiple/for_multiple.s 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_multiple/for_multiple.s.printed 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_multiple/for_multiple.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_multiple/for_multiple.simulation.stdout.log
+
+compiler_tests/control_flow/for_one.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_one/for_one.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_one/for_one.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_one/for_one.s 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_one/for_one.s.printed 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_one/for_one.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_one/for_one.simulation.stdout.log
+
+compiler_tests/control_flow/for_zero_v1.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_zero_v1/for_zero_v1.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_zero_v1/for_zero_v1.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_zero_v1/for_zero_v1.s 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_zero_v1/for_zero_v1.s.printed 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_zero_v1/for_zero_v1.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_zero_v1/for_zero_v1.simulation.stdout.log
+
+compiler_tests/control_flow/for_zero_v2.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_zero_v2/for_zero_v2.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_zero_v2/for_zero_v2.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_zero_v2/for_zero_v2.s 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_zero_v2/for_zero_v2.s.printed 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_zero_v2/for_zero_v2.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/for_zero_v2/for_zero_v2.simulation.stdout.log
+
+compiler_tests/control_flow/if_else_false.c
+	> Pass
+
+compiler_tests/control_flow/if_else_true.c
+	> Pass
+
+compiler_tests/control_flow/if_false.c
+	> Pass
+
+compiler_tests/control_flow/if_true.c
+	> Pass
+
+compiler_tests/control_flow/sequence.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/control_flow/sequence/sequence.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/sequence/sequence.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/sequence/sequence.s 
+	 /workspaces/langproc-cw/bin/output/control_flow/sequence/sequence.s.printed 
+	 /workspaces/langproc-cw/bin/output/control_flow/sequence/sequence.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/sequence/sequence.simulation.stdout.log
+
+compiler_tests/control_flow/while_multiple.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/control_flow/while_multiple/while_multiple.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/while_multiple/while_multiple.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/while_multiple/while_multiple.s 
+	 /workspaces/langproc-cw/bin/output/control_flow/while_multiple/while_multiple.s.printed 
+	 /workspaces/langproc-cw/bin/output/control_flow/while_multiple/while_multiple.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/while_multiple/while_multiple.simulation.stdout.log
+
+compiler_tests/control_flow/while_once.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/control_flow/while_once/while_once.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/while_once/while_once.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/while_once/while_once.s 
+	 /workspaces/langproc-cw/bin/output/control_flow/while_once/while_once.s.printed 
+	 /workspaces/langproc-cw/bin/output/control_flow/while_once/while_once.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/control_flow/while_once/while_once.simulation.stdout.log
+
+compiler_tests/control_flow/while_zero.c
+	> Pass
+
+compiler_tests/default/test_ADD0.c
+	> Pass
+
+compiler_tests/default/test_ADD1.c
+	> Pass
+
+compiler_tests/default/test_CALL.c
+	> Failed to link driver: 
+	 /workspaces/langproc-cw/bin/output/default/test_CALL/test_CALL.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/default/test_CALL/test_CALL.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/default/test_CALL/test_CALL.s 
+	 /workspaces/langproc-cw/bin/output/default/test_CALL/test_CALL.s.printed 
+	 /workspaces/langproc-cw/bin/output/default/test_CALL/test_CALL.linker.stderr.log 
+	 /workspaces/langproc-cw/bin/output/default/test_CALL/test_CALL.linker.stdout.log
+
+compiler_tests/default/test_LOCAL.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/default/test_LOCAL/test_LOCAL.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/default/test_LOCAL/test_LOCAL.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/default/test_LOCAL/test_LOCAL.s 
+	 /workspaces/langproc-cw/bin/output/default/test_LOCAL/test_LOCAL.s.printed 
+	 /workspaces/langproc-cw/bin/output/default/test_LOCAL/test_LOCAL.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/default/test_LOCAL/test_LOCAL.simulation.stdout.log
+
+compiler_tests/float/add_double.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/float/add_double/add_double.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/add_double/add_double.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/float/add_double/add_double.s 
+	 /workspaces/langproc-cw/bin/output/float/add_double/add_double.s.printed 
+	 /workspaces/langproc-cw/bin/output/float/add_double/add_double.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/add_double/add_double.assembler.stdout.log
+
+compiler_tests/float/add.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/float/add/add.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/add/add.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/float/add/add.s 
+	 /workspaces/langproc-cw/bin/output/float/add/add.s.printed 
+	 /workspaces/langproc-cw/bin/output/float/add/add.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/add/add.assembler.stdout.log
+
+compiler_tests/float/add_mul.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/float/add_mul/add_mul.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/add_mul/add_mul.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/float/add_mul/add_mul.s 
+	 /workspaces/langproc-cw/bin/output/float/add_mul/add_mul.s.printed 
+	 /workspaces/langproc-cw/bin/output/float/add_mul/add_mul.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/add_mul/add_mul.assembler.stdout.log
+
+compiler_tests/float/mul_add.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/float/mul_add/mul_add.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/mul_add/mul_add.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/float/mul_add/mul_add.s 
+	 /workspaces/langproc-cw/bin/output/float/mul_add/mul_add.s.printed 
+	 /workspaces/langproc-cw/bin/output/float/mul_add/mul_add.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/mul_add/mul_add.assembler.stdout.log
+
+compiler_tests/float/mul_double.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/float/mul_double/mul_double.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/mul_double/mul_double.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/float/mul_double/mul_double.s 
+	 /workspaces/langproc-cw/bin/output/float/mul_double/mul_double.s.printed 
+	 /workspaces/langproc-cw/bin/output/float/mul_double/mul_double.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/mul_double/mul_double.assembler.stdout.log
+
+compiler_tests/float/mul.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/float/mul/mul.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/mul/mul.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/float/mul/mul.s 
+	 /workspaces/langproc-cw/bin/output/float/mul/mul.s.printed 
+	 /workspaces/langproc-cw/bin/output/float/mul/mul.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/mul/mul.assembler.stdout.log
+
+compiler_tests/float/pow.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/float/pow/pow.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/pow/pow.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/float/pow/pow.s 
+	 /workspaces/langproc-cw/bin/output/float/pow/pow.s.printed 
+	 /workspaces/langproc-cw/bin/output/float/pow/pow.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/float/pow/pow.assembler.stdout.log
+
+compiler_tests/functions/call_constant_external.c
+	> Failed to link driver: 
+	 /workspaces/langproc-cw/bin/output/functions/call_constant_external/call_constant_external.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_constant_external/call_constant_external.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_constant_external/call_constant_external.s 
+	 /workspaces/langproc-cw/bin/output/functions/call_constant_external/call_constant_external.s.printed 
+	 /workspaces/langproc-cw/bin/output/functions/call_constant_external/call_constant_external.linker.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_constant_external/call_constant_external.linker.stdout.log
+
+compiler_tests/functions/call_constant_internal.c
+	> Failed to link driver: 
+	 /workspaces/langproc-cw/bin/output/functions/call_constant_internal/call_constant_internal.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_constant_internal/call_constant_internal.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_constant_internal/call_constant_internal.s 
+	 /workspaces/langproc-cw/bin/output/functions/call_constant_internal/call_constant_internal.s.printed 
+	 /workspaces/langproc-cw/bin/output/functions/call_constant_internal/call_constant_internal.linker.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_constant_internal/call_constant_internal.linker.stdout.log
+
+compiler_tests/functions/call_five_args_external.c
+	> Failed to link driver: 
+	 /workspaces/langproc-cw/bin/output/functions/call_five_args_external/call_five_args_external.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_five_args_external/call_five_args_external.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_five_args_external/call_five_args_external.s 
+	 /workspaces/langproc-cw/bin/output/functions/call_five_args_external/call_five_args_external.s.printed 
+	 /workspaces/langproc-cw/bin/output/functions/call_five_args_external/call_five_args_external.linker.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_five_args_external/call_five_args_external.linker.stdout.log
+
+compiler_tests/functions/call_five_args_internal.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.s 
+	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.s.printed 
+	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.assembler.stdout.log
+
+compiler_tests/functions/call_identity_external.c
+	> Failed to link driver: 
+	 /workspaces/langproc-cw/bin/output/functions/call_identity_external/call_identity_external.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_identity_external/call_identity_external.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_identity_external/call_identity_external.s 
+	 /workspaces/langproc-cw/bin/output/functions/call_identity_external/call_identity_external.s.printed 
+	 /workspaces/langproc-cw/bin/output/functions/call_identity_external/call_identity_external.linker.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_identity_external/call_identity_external.linker.stdout.log
+
+compiler_tests/functions/call_identity_internal.c
+	> Failed to link driver: 
+	 /workspaces/langproc-cw/bin/output/functions/call_identity_internal/call_identity_internal.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_identity_internal/call_identity_internal.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_identity_internal/call_identity_internal.s 
+	 /workspaces/langproc-cw/bin/output/functions/call_identity_internal/call_identity_internal.s.printed 
+	 /workspaces/langproc-cw/bin/output/functions/call_identity_internal/call_identity_internal.linker.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_identity_internal/call_identity_internal.linker.stdout.log
+
+compiler_tests/functions/call_mutual_recursive.c
+	> Failed to link driver: 
+	 /workspaces/langproc-cw/bin/output/functions/call_mutual_recursive/call_mutual_recursive.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_mutual_recursive/call_mutual_recursive.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_mutual_recursive/call_mutual_recursive.s 
+	 /workspaces/langproc-cw/bin/output/functions/call_mutual_recursive/call_mutual_recursive.s.printed 
+	 /workspaces/langproc-cw/bin/output/functions/call_mutual_recursive/call_mutual_recursive.linker.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_mutual_recursive/call_mutual_recursive.linker.stdout.log
+
+compiler_tests/functions/call_recursive_internal.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/functions/call_recursive_internal/call_recursive_internal.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_recursive_internal/call_recursive_internal.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_recursive_internal/call_recursive_internal.s 
+	 /workspaces/langproc-cw/bin/output/functions/call_recursive_internal/call_recursive_internal.s.printed
+
+compiler_tests/functions/call_two_args_external.c
+	> Failed to link driver: 
+	 /workspaces/langproc-cw/bin/output/functions/call_two_args_external/call_two_args_external.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_two_args_external/call_two_args_external.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_two_args_external/call_two_args_external.s 
+	 /workspaces/langproc-cw/bin/output/functions/call_two_args_external/call_two_args_external.s.printed 
+	 /workspaces/langproc-cw/bin/output/functions/call_two_args_external/call_two_args_external.linker.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_two_args_external/call_two_args_external.linker.stdout.log
+
+compiler_tests/functions/call_two_args_internal.c
+	> Failed to link driver: 
+	 /workspaces/langproc-cw/bin/output/functions/call_two_args_internal/call_two_args_internal.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_two_args_internal/call_two_args_internal.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_two_args_internal/call_two_args_internal.s 
+	 /workspaces/langproc-cw/bin/output/functions/call_two_args_internal/call_two_args_internal.s.printed 
+	 /workspaces/langproc-cw/bin/output/functions/call_two_args_internal/call_two_args_internal.linker.stderr.log 
+	 /workspaces/langproc-cw/bin/output/functions/call_two_args_internal/call_two_args_internal.linker.stdout.log
+
+compiler_tests/integer/add.c
+	> Pass
+
+compiler_tests/integer/bitwise_and.c
+	> Pass
+
+compiler_tests/integer/bitwise_or.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/integer/bitwise_or/bitwise_or.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/integer/bitwise_or/bitwise_or.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/integer/bitwise_or/bitwise_or.s 
+	 /workspaces/langproc-cw/bin/output/integer/bitwise_or/bitwise_or.s.printed 
+	 /workspaces/langproc-cw/bin/output/integer/bitwise_or/bitwise_or.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/integer/bitwise_or/bitwise_or.simulation.stdout.log
+
+compiler_tests/integer/bitwise_xor.c
+	> Pass
+
+compiler_tests/integer/div.c
+	> Pass
+
+compiler_tests/integer/equal.c
+	> Pass
+
+compiler_tests/integer/less_than.c
+	> Pass
+
+compiler_tests/integer/less_than_equal.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/integer/less_than_equal/less_than_equal.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/integer/less_than_equal/less_than_equal.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/integer/less_than_equal/less_than_equal.s 
+	 /workspaces/langproc-cw/bin/output/integer/less_than_equal/less_than_equal.s.printed 
+	 /workspaces/langproc-cw/bin/output/integer/less_than_equal/less_than_equal.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/integer/less_than_equal/less_than_equal.simulation.stdout.log
+
+compiler_tests/integer/logical_and.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/integer/logical_and/logical_and.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/integer/logical_and/logical_and.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/integer/logical_and/logical_and.s 
+	 /workspaces/langproc-cw/bin/output/integer/logical_and/logical_and.s.printed 
+	 /workspaces/langproc-cw/bin/output/integer/logical_and/logical_and.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/integer/logical_and/logical_and.simulation.stdout.log
+
+compiler_tests/integer/logical_or.c
+	> Pass
+
+compiler_tests/integer/mul.c
+	> Pass
+
+compiler_tests/integer/sub.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/integer/sub/sub.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/integer/sub/sub.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/integer/sub/sub.s 
+	 /workspaces/langproc-cw/bin/output/integer/sub/sub.s.printed 
+	 /workspaces/langproc-cw/bin/output/integer/sub/sub.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/integer/sub/sub.simulation.stdout.log
+
+compiler_tests/local_var/constant_initialiser.c
+	> Pass
+
+compiler_tests/local_var/dual_var.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/local_var/dual_var/dual_var.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/local_var/dual_var/dual_var.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/local_var/dual_var/dual_var.s 
+	 /workspaces/langproc-cw/bin/output/local_var/dual_var/dual_var.s.printed 
+	 /workspaces/langproc-cw/bin/output/local_var/dual_var/dual_var.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/local_var/dual_var/dual_var.simulation.stdout.log
+
+compiler_tests/local_var/expression_initialiser.c
+	> Pass
+
+compiler_tests/local_var/identity.c
+	> Pass
+
+compiler_tests/local_var/scoped_var.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/local_var/scoped_var/scoped_var.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/local_var/scoped_var/scoped_var.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/local_var/scoped_var/scoped_var.s 
+	 /workspaces/langproc-cw/bin/output/local_var/scoped_var/scoped_var.s.printed 
+	 /workspaces/langproc-cw/bin/output/local_var/scoped_var/scoped_var.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/local_var/scoped_var/scoped_var.simulation.stdout.log
+
+compiler_tests/local_var/single_var.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/local_var/single_var/single_var.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/local_var/single_var/single_var.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/local_var/single_var/single_var.s 
+	 /workspaces/langproc-cw/bin/output/local_var/single_var/single_var.s.printed 
+	 /workspaces/langproc-cw/bin/output/local_var/single_var/single_var.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/local_var/single_var/single_var.simulation.stdout.log
+
+compiler_tests/misc/enum1.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/misc/enum1/enum1.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/misc/enum1/enum1.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/misc/enum1/enum1.s 
+	 /workspaces/langproc-cw/bin/output/misc/enum1/enum1.s.printed
+
+compiler_tests/misc/enum2.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/misc/enum2/enum2.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/misc/enum2/enum2.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/misc/enum2/enum2.s 
+	 /workspaces/langproc-cw/bin/output/misc/enum2/enum2.s.printed
+
+compiler_tests/misc/switch1.c
+	> Pass
+
+compiler_tests/misc/switch2.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/misc/switch2/switch2.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/misc/switch2/switch2.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/misc/switch2/switch2.s 
+	 /workspaces/langproc-cw/bin/output/misc/switch2/switch2.s.printed 
+	 /workspaces/langproc-cw/bin/output/misc/switch2/switch2.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/misc/switch2/switch2.assembler.stdout.log
+
+compiler_tests/misc/typedef1.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/misc/typedef1/typedef1.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/misc/typedef1/typedef1.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/misc/typedef1/typedef1.s 
+	 /workspaces/langproc-cw/bin/output/misc/typedef1/typedef1.s.printed
+
+compiler_tests/misc/typedef2.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/misc/typedef2/typedef2.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/misc/typedef2/typedef2.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/misc/typedef2/typedef2.s 
+	 /workspaces/langproc-cw/bin/output/misc/typedef2/typedef2.s.printed
+
+compiler_tests/pointer/addressof.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/pointer/addressof/addressof.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/pointer/addressof/addressof.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/pointer/addressof/addressof.s 
+	 /workspaces/langproc-cw/bin/output/pointer/addressof/addressof.s.printed
+
+compiler_tests/pointer/arithmetic.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/pointer/arithmetic/arithmetic.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/pointer/arithmetic/arithmetic.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/pointer/arithmetic/arithmetic.s 
+	 /workspaces/langproc-cw/bin/output/pointer/arithmetic/arithmetic.s.printed
+
+compiler_tests/pointer/assign.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/pointer/assign/assign.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/pointer/assign/assign.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/pointer/assign/assign.s 
+	 /workspaces/langproc-cw/bin/output/pointer/assign/assign.s.printed
+
+compiler_tests/pointer/dereference.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/pointer/dereference/dereference.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/pointer/dereference/dereference.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/pointer/dereference/dereference.s 
+	 /workspaces/langproc-cw/bin/output/pointer/dereference/dereference.s.printed
+
+compiler_tests/pointer/index.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/pointer/index/index.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/pointer/index/index.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/pointer/index/index.s 
+	 /workspaces/langproc-cw/bin/output/pointer/index/index.s.printed
+
+compiler_tests/programs/fibonacci.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/programs/fibonacci/fibonacci.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/programs/fibonacci/fibonacci.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/programs/fibonacci/fibonacci.s 
+	 /workspaces/langproc-cw/bin/output/programs/fibonacci/fibonacci.s.printed
+
+compiler_tests/programs/multiply.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/programs/multiply/multiply.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/programs/multiply/multiply.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/programs/multiply/multiply.s 
+	 /workspaces/langproc-cw/bin/output/programs/multiply/multiply.s.printed 
+	 /workspaces/langproc-cw/bin/output/programs/multiply/multiply.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/programs/multiply/multiply.assembler.stdout.log
+
+compiler_tests/programs/sqrt.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/programs/sqrt/sqrt.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/programs/sqrt/sqrt.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/programs/sqrt/sqrt.s 
+	 /workspaces/langproc-cw/bin/output/programs/sqrt/sqrt.s.printed 
+	 /workspaces/langproc-cw/bin/output/programs/sqrt/sqrt.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/programs/sqrt/sqrt.simulation.stdout.log
+
+compiler_tests/strings/chliteral.c
+	> Failed to simulate: 
+	 /workspaces/langproc-cw/bin/output/strings/chliteral/chliteral.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/strings/chliteral/chliteral.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/strings/chliteral/chliteral.s 
+	 /workspaces/langproc-cw/bin/output/strings/chliteral/chliteral.s.printed 
+	 /workspaces/langproc-cw/bin/output/strings/chliteral/chliteral.simulation.stderr.log 
+	 /workspaces/langproc-cw/bin/output/strings/chliteral/chliteral.simulation.stdout.log
+
+compiler_tests/strings/escaped.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/strings/escaped/escaped.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/strings/escaped/escaped.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/strings/escaped/escaped.s 
+	 /workspaces/langproc-cw/bin/output/strings/escaped/escaped.s.printed
+
+compiler_tests/strings/literal.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/strings/literal/literal.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/strings/literal/literal.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/strings/literal/literal.s 
+	 /workspaces/langproc-cw/bin/output/strings/literal/literal.s.printed
+
+compiler_tests/strings/puts.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/strings/puts/puts.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/strings/puts/puts.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/strings/puts/puts.s 
+	 /workspaces/langproc-cw/bin/output/strings/puts/puts.s.printed
+
+compiler_tests/strings/search.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/strings/search/search.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/strings/search/search.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/strings/search/search.s 
+	 /workspaces/langproc-cw/bin/output/strings/search/search.s.printed
+
+compiler_tests/struct/sizeof.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/struct/sizeof/sizeof.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/struct/sizeof/sizeof.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/struct/sizeof/sizeof.s 
+	 /workspaces/langproc-cw/bin/output/struct/sizeof/sizeof.s.printed
+
+compiler_tests/struct/struct_inst.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/struct/struct_inst/struct_inst.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/struct/struct_inst/struct_inst.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/struct/struct_inst/struct_inst.s 
+	 /workspaces/langproc-cw/bin/output/struct/struct_inst/struct_inst.s.printed
+
+compiler_tests/struct/struct_member_get.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/struct/struct_member_get/struct_member_get.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/struct/struct_member_get/struct_member_get.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/struct/struct_member_get/struct_member_get.s 
+	 /workspaces/langproc-cw/bin/output/struct/struct_member_get/struct_member_get.s.printed
+
+compiler_tests/struct/struct_member_set.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/struct/struct_member_set/struct_member_set.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/struct/struct_member_set/struct_member_set.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/struct/struct_member_set/struct_member_set.s 
+	 /workspaces/langproc-cw/bin/output/struct/struct_member_set/struct_member_set.s.printed
+
+compiler_tests/struct/struct_two_members.c
+	> Failed to compile testcase: 
+	 /workspaces/langproc-cw/bin/output/struct/struct_two_members/struct_two_members.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/struct/struct_two_members/struct_two_members.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/struct/struct_two_members/struct_two_members.s 
+	 /workspaces/langproc-cw/bin/output/struct/struct_two_members/struct_two_members.s.printed
+
+compiler_tests/types/sizeof_char_inst.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_char_inst/sizeof_char_inst.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_char_inst/sizeof_char_inst.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_char_inst/sizeof_char_inst.s 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_char_inst/sizeof_char_inst.s.printed 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_char_inst/sizeof_char_inst.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_char_inst/sizeof_char_inst.assembler.stdout.log
+
+compiler_tests/types/sizeof_char_type.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_char_type/sizeof_char_type.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_char_type/sizeof_char_type.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_char_type/sizeof_char_type.s 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_char_type/sizeof_char_type.s.printed 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_char_type/sizeof_char_type.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_char_type/sizeof_char_type.assembler.stdout.log
+
+compiler_tests/types/sizeof_int_inst.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_int_inst/sizeof_int_inst.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_int_inst/sizeof_int_inst.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_int_inst/sizeof_int_inst.s 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_int_inst/sizeof_int_inst.s.printed 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_int_inst/sizeof_int_inst.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_int_inst/sizeof_int_inst.assembler.stdout.log
+
+compiler_tests/types/sizeof_int_type.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_int_type/sizeof_int_type.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_int_type/sizeof_int_type.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_int_type/sizeof_int_type.s 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_int_type/sizeof_int_type.s.printed 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_int_type/sizeof_int_type.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/types/sizeof_int_type/sizeof_int_type.assembler.stdout.log
+
+compiler_tests/types/unsigned.c
+	> Failed to assemble: 
+	 /workspaces/langproc-cw/bin/output/types/unsigned/unsigned.compiler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/types/unsigned/unsigned.compiler.stdout.log 
+	 /workspaces/langproc-cw/bin/output/types/unsigned/unsigned.s 
+	 /workspaces/langproc-cw/bin/output/types/unsigned/unsigned.s.printed 
+	 /workspaces/langproc-cw/bin/output/types/unsigned/unsigned.assembler.stderr.log 
+	 /workspaces/langproc-cw/bin/output/types/unsigned/unsigned.assembler.stdout.log
+
+
+>> Test Summary: 20 Passed, 66 Failed

@@ -88,6 +88,15 @@ void FunctionDefinition::EmitRISC(std::ostream &stream, Context &context) const
     context.ExitScope();
     context.currentFunction = -1;
     context.parameterDecls.clear();
+
+    // Just in case they don't have any `return` statement
+
+    stream << "mv sp,s0\n";
+    stream << "lw s0,(sp)\n";
+    stream << "lw ra,4(sp)\n";
+    stream << "addi sp,sp,8\n";
+
+    stream << "ret" << std::endl;
 }
 
 void FunctionDefinition::Print(std::ostream &stream) const

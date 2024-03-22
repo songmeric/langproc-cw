@@ -1,4 +1,6 @@
 int f(int x, int y)
 {
-    return x&y;
+    int z;
+    z = 0;
+    return z;
 }

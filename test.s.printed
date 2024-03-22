@@ -1,1 +1,4 @@
 int f() {
+int z;
+z=x-yreturn z;
+}

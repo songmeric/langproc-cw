@@ -1,0 +1,88 @@
+--- /tmp/prevrun	2024-03-22 05:45:01.894591000 +0000
++++ /tmp/thisrun	2024-03-22 05:45:47.040460000 +0000
+@@ -208,17 +208,17 @@
+ 	 /workspaces/langproc-cw/bin/output/functions/call_five_args_external/call_five_args_external.s.printed 
+ 	 /workspaces/langproc-cw/bin/output/functions/call_five_args_external/call_five_args_external.linker.stderr.log 
+ 	 /workspaces/langproc-cw/bin/output/functions/call_five_args_external/call_five_args_external.linker.stdout.log
+ 
+ compiler_tests/functions/call_five_args_internal.c
+-	> Failed to assemble: 
++	> Failed to link driver: 
+ 	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.compiler.stderr.log 
+ 	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.compiler.stdout.log 
+ 	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.s 
+ 	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.s.printed 
+-	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.assembler.stderr.log 
+-	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.assembler.stdout.log
++	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.linker.stderr.log 
++	 /workspaces/langproc-cw/bin/output/functions/call_five_args_internal/call_five_args_internal.linker.stdout.log
+ 
+ compiler_tests/functions/call_identity_external.c
+ 	> Failed to link driver: 
+ 	 /workspaces/langproc-cw/bin/output/functions/call_identity_external/call_identity_external.compiler.stderr.log 
+ 	 /workspaces/langproc-cw/bin/output/functions/call_identity_external/call_identity_external.compiler.stdout.log 
+@@ -275,11 +275,17 @@
+ 
+ compiler_tests/integer/bitwise_and.c
+ 	> Pass
+ 
+ compiler_tests/integer/bitwise_or.c
+-	> Pass
++	> Failed to simulate: 
++	 /workspaces/langproc-cw/bin/output/integer/bitwise_or/bitwise_or.compiler.stderr.log 
++	 /workspaces/langproc-cw/bin/output/integer/bitwise_or/bitwise_or.compiler.stdout.log 
++	 /workspaces/langproc-cw/bin/output/integer/bitwise_or/bitwise_or.s 
++	 /workspaces/langproc-cw/bin/output/integer/bitwise_or/bitwise_or.s.printed 
++	 /workspaces/langproc-cw/bin/output/integer/bitwise_or/bitwise_or.simulation.stderr.log 
++	 /workspaces/langproc-cw/bin/output/integer/bitwise_or/bitwise_or.simulation.stdout.log
+ 
+ compiler_tests/integer/bitwise_xor.c
+ 	> Pass
+ 
+ compiler_tests/integer/div.c
+@@ -290,11 +296,17 @@
+ 
+ compiler_tests/integer/less_than.c
+ 	> Pass
+ 
+ compiler_tests/integer/less_than_equal.c
+-	> Pass
++	> Failed to simulate: 
++	 /workspaces/langproc-cw/bin/output/integer/less_than_equal/less_than_equal.compiler.stderr.log 
++	 /workspaces/langproc-cw/bin/output/integer/less_than_equal/less_than_equal.compiler.stdout.log 
++	 /workspaces/langproc-cw/bin/output/integer/less_than_equal/less_than_equal.s 
++	 /workspaces/langproc-cw/bin/output/integer/less_than_equal/less_than_equal.s.printed 
++	 /workspaces/langproc-cw/bin/output/integer/less_than_equal/less_than_equal.simulation.stderr.log 
++	 /workspaces/langproc-cw/bin/output/integer/less_than_equal/less_than_equal.simulation.stdout.log
+ 
+ compiler_tests/integer/logical_and.c
+ 	> Failed to simulate: 
+ 	 /workspaces/langproc-cw/bin/output/integer/logical_and/logical_and.compiler.stderr.log 
+ 	 /workspaces/langproc-cw/bin/output/integer/logical_and/logical_and.compiler.stdout.log 
+@@ -308,11 +320,17 @@
+ 
+ compiler_tests/integer/mul.c
+ 	> Pass
+ 
+ compiler_tests/integer/sub.c
+-	> Pass
++	> Failed to simulate: 
++	 /workspaces/langproc-cw/bin/output/integer/sub/sub.compiler.stderr.log 
++	 /workspaces/langproc-cw/bin/output/integer/sub/sub.compiler.stdout.log 
++	 /workspaces/langproc-cw/bin/output/integer/sub/sub.s 
++	 /workspaces/langproc-cw/bin/output/integer/sub/sub.s.printed 
++	 /workspaces/langproc-cw/bin/output/integer/sub/sub.simulation.stderr.log 
++	 /workspaces/langproc-cw/bin/output/integer/sub/sub.simulation.stdout.log
+ 
+ compiler_tests/local_var/constant_initialiser.c
+ 	> Pass
+ 
+ compiler_tests/local_var/dual_var.c
+@@ -546,6 +564,6 @@
+ 	 /workspaces/langproc-cw/bin/output/types/unsigned/unsigned.s.printed 
+ 	 /workspaces/langproc-cw/bin/output/types/unsigned/unsigned.assembler.stderr.log 
+ 	 /workspaces/langproc-cw/bin/output/types/unsigned/unsigned.assembler.stdout.log
+ 
+ 
+->> Test Summary: 34 Passed, 52 Failed
++>> Test Summary: 31 Passed, 55 Failed

@@ -11,7 +11,15 @@ private:
 
 public:
     DeclarationList(Node *type, Node *list)
-        : type_(type), list_(list){}
+        : type_(type), list_(list)
+    {
+        std::cerr << "Constructing DeclarationList with"
+            " type=";
+        type->Print(std::cerr);
+        std::cerr << " list=";
+        list->Print(std::cerr);
+        std::cerr << "\n";
+    }
     ~DeclarationList()
     {
         delete type_;

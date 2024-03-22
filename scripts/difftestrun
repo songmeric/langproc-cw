@@ -1,0 +1,2 @@
+#!/bin/bash
+scripts/test.py > /tmp/thisrun ; diff -U 5 /tmp/prevrun /tmp/thisrun > diff-$(date "+%Y-%m-%d-%H-%M-%S"); mv /tmp/thisrun /tmp/prevrun

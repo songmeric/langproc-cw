@@ -55,6 +55,10 @@ public:
 
     int currentFunction{-1};
 
+    int currentArgument{-1};
+
+    std::vector<Node*> callArgs;
+
     // Stashed by DirectDeclarator
     // to hold on to them until the function definition
     Node *functionParameters{};
@@ -77,6 +81,7 @@ public:
     std::string declarationListType;
 
     Variable *FindVariable(std::string const& name);
+    Function *FindFunction(std::string const &name);
 };
 
 #endif

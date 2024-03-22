@@ -75,7 +75,12 @@ enum Operator {
 
     // Indirect (->)
     OP_INDIRECT,
+
+    // struct member (.)
     OP_MEMBER,
+
+    // *
+    OP_DEREFERENCE,
 
     // Shifts
     OP_LEFT,

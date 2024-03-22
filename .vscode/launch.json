@@ -42,7 +42,7 @@
             "program": "${workspaceFolder}/bin/c_compiler",
             "args": [
                 "-S",
-                "compiler_tests/local_var/constant_initialiser",
+                "compiler_tests/functions/call_constant_external.c",
                 "-o",
                 "bin/debug.s",
             ],

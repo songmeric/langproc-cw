@@ -9,6 +9,11 @@
 
 void BinaryOp::EmitRISC(std::ostream &stream, Context &context) const
 {
+    if (oper_ == OP_CALL)
+    {
+        return EmitCall(stream, context);
+    }
+
     // Handle assignments in a way that reuses the
     // code for non-assignment
     bool assignment = IsAssignment();
@@ -108,13 +113,12 @@ void BinaryOp::EmitRISC(std::ostream &stream, Context &context) const
         std::string True = context.NewLabel();
         std::string False = context.NewLabel();
 
-        stream << "and a0,a1,a0\n";
-        stream << "bnez a0," << True << "\n";
-        stream << "li a0,0\n";
-        stream << "j " << False << "\n";
-        stream << True << ":\n";
+        stream << "beqz a0," << False << "\n";
         stream << "li a0,1\n";
+        stream << "bnez a1," << True << "\n";
         stream << False << ":\n";
+        stream << "li a0,0\n";
+        stream << True << ":\n";
     }
     else{   ////
         stream << insn << " a0,a1,a0\n";
@@ -126,8 +130,50 @@ void BinaryOp::EmitRISC(std::ostream &stream, Context &context) const
     }
 }
 
+void BinaryOp::EmitCall(std::ostream &stream, Context &context) const
+{
+    if (rhs_)
+        rhs_->EmitRISC(stream, context);
+
+    // Evaluate the function pointer
+    stream << "# Evaluating function pointer\n";
+    lhs_->EmitRISC(stream, context);
+    stream << "# Saving function pointer\n";
+    stream << "mv t1,a0\n";
+
+    if (context.callArgs.size() == 1) {
+        // Simpler when there is one argument
+        context.callArgs.front()->EmitRISC(stream, context);
+    } else {
+        for (size_t i = 0; i < context.callArgs.size(); ++i) {
+            context.callArgs[i]->EmitRISC(stream, context);
+            if (i == 0) {
+                stream << "# Stashing arg0 in t0\n";
+                stream << "mv t0,a0\n";
+            } else {
+                stream << "# Moving arg into position\n";
+                stream << "mv a" << i << ",a0\n";
+            }
+        }
+        stream << "# Moving arg0 into position\n";
+        stream << "mv a0,t0\n";
+
+        stream << "jalr t1\n";
+    }
+
+    context.callArgs.clear();
+}
+
 void BinaryOp::Print(std::ostream &stream) const
 {
+    if (oper_ == OP_CALL) {
+        lhs_->Print(stream);
+        stream << '(';
+        if (rhs_)
+            rhs_->Print(stream);
+        stream << ')';
+        return;
+    }
     bool assignment = IsAssignment();
 
     Operator op = oper_;

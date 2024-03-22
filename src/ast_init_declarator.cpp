@@ -7,7 +7,8 @@ void InitDeclarator::EmitRISC(std::ostream &stream, Context &context) const
 
     identifier_->Print(ss);
     std::string name = ss.str();
-    Variable *v = context.DeclareVariable(context.declarationListType, name);
+    Variable *v = context.DeclareVariable(
+        context.declarationListType, name);
 
     if(value_){
         stream << "# Evaluating value for initialization of " << v->name << "\n";

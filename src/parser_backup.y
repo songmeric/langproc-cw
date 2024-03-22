@@ -465,7 +465,10 @@ declarator
 	: pointer direct_declarator {
 		assert(!"Unimplemented");
 	}
-	| direct_declarator { $$ = $1; }
+	| direct_declarator {
+        std::cerr "direct_declarator!!!!!!\n"
+		$$ = new FunctionDefinition()
+	}
 	;
 
 
