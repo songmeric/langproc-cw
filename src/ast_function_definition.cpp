@@ -36,9 +36,9 @@ void FunctionDefinition::EmitRISC(std::ostream &stream, Context &context) const
     stream << "mv s0,sp\n";
 
     // Create the parameter variables
-    Node *paramList = context.functionParameters;
-    if (paramList)
-        paramList->EmitRISC(stream, context);
+    // Node *paramList = context.functionParameters;
+    // if (paramList)
+    //     paramList->EmitRISC(stream, context);
 
     int parameter_nr = 0;
 
@@ -57,13 +57,13 @@ void FunctionDefinition::EmitRISC(std::ostream &stream, Context &context) const
     }
 
     if (!parameterInstances.empty()) {
-        Variable *firstParameter = parameterInstances.front();
+        // Variable *firstParameter = parameterInstances.front();
         Variable *lastParameter = parameterInstances.back();
-        size_t end = lastParameter->offset +
-            context.SizeOfType(lastParameter->type);
-        size_t start = firstParameter->offset;
-        ssize_t alloc = end - start;
-
+        // size_t end = lastParameter->offset +
+        //     context.SizeOfType(lastParameter->type);
+        // size_t start = firstParameter->offset;
+        // ssize_t alloc = end - start;
+        ssize_t alloc = lastParameter->offset;
         stream << "# Allocate space for the parameters\n";
         stream << "addi sp,sp," << alloc << "\n";
     }
